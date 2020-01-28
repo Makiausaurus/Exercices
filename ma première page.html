@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ma première page HTML</title>
+</head>
+<body> 
+    <header>
+        <img src="assets/images/jarditou_logo.jpg" alt="Une femme qui tient une brouette remplie d'outils et de fleurs et la marque Jarditou" title="logo jarditou" height="150" width="520">
+        <p>Ceci n'est <b>PAS</b> JARDITOU <sup>&#169</sup></p>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="#Ceci n'est pas un menu"></a> Ceci n'est pas un menu</li>
+            <li><a href="#Ca non plus"></a>Ca non plus</li>
+            <li><a href="#Et lui encore moins"></a>Et lui encore moins</li>
+            <li><a href="#sectionnement" title="Aller à la partie sur le sectionnement">Sectionnement</a></li>
+            <li><a href="https://www.afpa.fr" title="Visitez le site de l'AFPA">Découvrez l'AFPA</a></li>
+        </ul>
+    </nav>
+   
+    <h1>Mon contenu</h1>
+        <p>Le HTML 5 c'est fantastique</p> <!-- Ceci est un commentaire-->
+
+    <section>
+        <header><h1>Nos anciens articles !</h1></header>
+        <article><p>La superbe Brouette Super 3000 !</p>
+            <aside>
+                <p>Super promo de -99% ! (écoulement des stocks suite à un accident mortel)</p>
+            </aside>    
+        </article>
+      
+    </section> 
+
+    <h2 id="sectionnement">Le sectionnement</h2>
+    <hr>
+        <p>Nous l'avons vu, les éléments de type blocs permettent de structurer une page web à l'intérieur du corps de la page <code>body</code></p>
+        <p>HTML a ajouté de nouvelles balises :
+            <ul>
+                <li><code>header</code> indique l'entête (on y mettra par exemple un logo),</li>
+                <li><code>nav</code> indique un bloc de navigation, c'es-à-dire un menu</li>
+                <li><code>section</code> indique une section de contenu</li>
+                <li><code>article</code> indique un article de contenu; cette balise doit être englobée dans une section (qui peut contenir plusieurs articles).</li> 
+                <li><code>aside</code> se positionne sur le côté d’un article (ou d'une section) pour indiquer un complément de texte (une note, une référence etc.) 
+                se rapportant directement à l'article. Cette balise ne doit pas servir à créer des colonnes latérales au contenu principal dont le contenu ne serait pas en rapport).</li>
+            </ul>
+        </p>
+    <h3>Exemple de sectionnement à l'aide des nouvelles balises</h3>
+        <figure>
+            <img src="assets/img/sectionnement.png" alt="Une image descrptive des différentes sections que créent les balise arrivée avec HTML 5" title="sectionnement">
+            <figcaption>Schéma du scetionnement d'une page html</figcaption>
+        </figure>
+        <hr>
+    <footer>
+        <ul>
+            <li><a href="#Mentions légales">Mentions légales</a></li>
+            <li><a href="#Horaires"></a>Horaires</li>
+            <li><a href="#Plan du site"></a>Plan du site</li>
+            <li><a href="assets/images/jarditou_logo.jpg" title="Le logo de Jarditou">Téléchargez notre logo !</a></li>
+        </ul>
+    </footer>
+        <a href="sousrep/page 2.html">Exercice sur les listes</a>
+    </body>
+</html>
