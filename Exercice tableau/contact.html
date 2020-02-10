@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="desktop.css">
+    <title>Jarditou - Contact</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <figure class="logo-and-caption">
+            <img src="assets/img/jarditou_logo.jpg" width="300" height="90" alt="logo jarditou" title="logo jarditou" id="logo" >
+            <figcaption class="caption">Tout le jardin</figcaption>
+        </figure>
+        </div>    
+        <nav class="footer-menu" >
+                <ul>
+                    <li><a href="index.html" title="Revenir à la page d'accueil">Accueil</a></li>
+                    <li><a href="tableau.html" title="Passer au tableau des ventes">Tableau</a></li>
+                    <li><a href="contact.html" title="Contactez-nous">Contact</a></li>
+                </ul>
+            </nav>
+        <img src="assets/img/promotion.jpg" alt="promotion" title="promotion" width="100%" height="100%">
+    </header>
+    <hr>
+    <h1>Contactez nous !</h1>
+
+    <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact">
+        <p>* Ces zones sont obligatoires </p>
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+                <label for="nom">Votre nom* : </label>   <input type="text" name="nom" id="nom" autofocus required title="Entrez votre nom (que des caractères entre a et z)"><br>
+                <label for="prenom">Votre prénom* :</label> <input type="text" name="prenom" id="prenom" required title="Veuillez entrer votre prénom (que des caractères entre a et z)"><br>
+                <p>Sexe* :</p>
+                <input type="radio" name="sexe" value="Féminin" required title="Sélectionnez votre sexe" > Féminin <input type="radio" name="sexe" value="Masculin" required title="Veuillez sélectionnez votre sexe"> Masculin <br>
+                <label for="ddn">Date de naissance* :</label>  <input type="date" name="ddn" id="ddn" required title="Veuillez indiquer votre date de naissance"><br>
+                <label for="cp"> Code postal : </label><input type="text" name="cp" id="cp"><br>
+                <label for="adresse"> Adresse : </label><input type="text" name="adresse" id="adresse"><br>
+                <label for="ville"> Ville : </label><input type="text" name="ville" id="ville"><br>
+                <label for="email"> Email* : </label><input type="email" name="email" id="email" placeholder="dave.loper@afpa.fr" id="email" required>
+        </fieldset>
+        <fieldset>
+            <legend>Votre demande</legend>
+                <label for="sujet"> Sujet* : </label><select name="sujet" id="sujet">
+                                                        <option value="commandes" selected>Mes commandes</option>
+                                                        <option value="questionproduit">Questions sur un produit</option>
+                                                        <option value="reclamation">Réclamation</option>
+                                                        <option value="autre">Autres</option>
+                                                    </select> <br>
+                <label for="question"> Votre question * : </label><textarea id="question" required title="Veuillez renseigner ce champs" rows="10" cols="42"></textarea>
+        </fieldset>
+        <p><label for="consent"><input type="checkbox" name="consent" id="consent" required> J'accepte le traitement informatique de ce formulaire.</label></p>
+        <button type="submit">Envoyer</button> <button type="reset">Annuler</button>
+    </form>
+    <hr>
+    <footer>
+        <nav class="footer-menu">
+        <ul>
+            <li><a href="#Mentionslégales">Mentions légales</a></li>
+            <li><a href="#Horaires">Horaires</a></li>
+            <li><a href="#Plandusite">Plan du site</a></li>
+        </ul>
+        </nav>
+    </footer>
+</body>
+</html>
