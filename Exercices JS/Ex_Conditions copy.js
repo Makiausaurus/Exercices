@@ -1,49 +1,40 @@
 //Exercice 0
-//Exemple 1
-/* var temp = 39;
-if (temp > 38) {
-    alert("Le patient à de la fièvre");
+/*var patient;
+var temperature;
+var tension;
+var pouls;
+patient = confirm("La personne est-elle un patient ?");
+if (patient == false) {
+    alert("Éconduire l'olibrius.")
 }
-
-//Exemple 2
-var temp = 41;
-var tens = 25;
-
-if (temp > 41 && tens > 25) {
-    alert("Le patient va perdre patience");
-}
-
-//Exemple 3
-var patient = "oui";
-
-if (patient != "oui") {
-    alert("Éconduire l'olibrius");
-}*/
-
-//Exemple 4
-var temp = 42;
-var tens = 24;
-var pouls = 181;
-
-if (temp > 42 || (tens > 25 && pouls > 180)); {
-    alert("Prévenir la famille");
-}
-
-//Exemple 5
-var temps = 40;
-var tens = 25;
-
-if (temp > 40 || tens >= 25) {
-    alert("Hospitaliser le patient");
-}
-
-//Exemple 6
-var patient = 0;
-var pouls = 0;
-
-if (patient == 0 && pouls == 0) {
-    alert("Appeler le curé");
-}
+do {
+    if (patient == true) {
+        temperature = parseInt(prompt("Entrez la température du patient :"));
+        if (temperature < 38) {
+            alert("Éconduire l'olibrius");
+            break;
+        } else {
+            tension = parseInt(prompt("Entrez la tension du patient"));
+        }
+        if (temperature > 38 && temperature < 40) {
+            alert("Le patient à de la fièvre");
+            if (temperature > 40 || tension >= 25) {
+                alert("Il faut hospitaliser le patient.");
+                if (temperature >= 41 && temperature <= 42 && tension > 25) {
+                    alert("Le patient va perdre patience.");
+                    pouls = parseInt(prompt("Quel est le pouls du patient ?"));
+                    if (temperature > 42 || (tension < 25 && pouls > 180)) {
+                        alert("Il faut prévenir la famille");
+                        if (pouls == 0) {
+                            alert("C'est l'heure d'appeler le curé.");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} while (patient != false); */ //mauvais, voir plus tard
 
 //Exercice 1
 

@@ -27,7 +27,6 @@ do {
     if (prenom == null || prenom == "") {
         break;
     }
-
     compteur++;
     if (lstPrenoms == "") {
         lstPrenoms += (prenom);
