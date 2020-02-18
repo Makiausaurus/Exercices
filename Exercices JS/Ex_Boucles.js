@@ -118,7 +118,7 @@ var mot = "";
 var voyelles = 0;
 var i = 0;
 
-mot = prompt("Entrez un mot");
+mot = prompt.toLowerCase("Entrez un mot");
 
 for (i = 0; i <= mot.length; i++) {
     switch (mot[i]) {
@@ -128,12 +128,6 @@ for (i = 0; i <= mot.length; i++) {
         case "o":
         case "u":
         case "y":
-        case "A":
-        case "E":
-        case "I":
-        case "O":
-        case "U":
-        case "Y":
             voyelles++
             console.log(voyelles);
             break;

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contrôle</title>
+</head>
+
+<body>
+    <div id="label1">JavaScript - Contrôle formulaire</div>
+    <p>Saisissez un texte puis cliquez sur le bouton 'Contrôler'</p>
+    <input id="textBox1" value="">
+    <input type="button" id="button1" value="Contrôler">
+    <script>
+        document.getElementById("button1").addEventListener("click", () => {
+            var input = document.getElementById("textBox1").value;
+            if (input == "") {
+                alert("Veuillez remplir le champ")
+                return false;
+            } else {
+                alert("Vous avez saisi '" + input + "'");
+                console.log(input);
+                return true;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

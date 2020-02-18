@@ -140,7 +140,7 @@ sort(tab);
 console.log(tab);
 */
 
-function bubbleSort(tabNoTri) {
+function bubbleSort(tabNoTri) { // Idée Anastasiia et Aaron
     var j;
     for (i = 0; i < tabNoTri.length; i++) {
         for (j = 0; j < tabNoTri.length - i - 1; j++) {
