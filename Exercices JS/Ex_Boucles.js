@@ -66,10 +66,10 @@ console.log("Total = " + total);
 /* Exercice 4 - Moyenne
 Ecrire un programme qui saisit des entiers et en affiche la somme et la moyenne (on arrête la saisie avec la valeur 0).*/
 
-var total = 0,
-    compteur = 0,
-    moyenne = null,
-    entier = null;
+var total = 0;
+compteur = 0;
+moyenne = null;
+entier = null;
 
 while (entier != 0) {
     total += entier;
