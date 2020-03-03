@@ -17,11 +17,11 @@ Créer une page HTML qui demande à l'utilisateur un prénom.
 La page doit continuer à demander des prénoms à l'utilisateur jusqu'à ce qu'il laisse le champ vide.
 Enfin, la page affiche sur la console le nombre de prénoms et les prénoms saisis. */
 
-var compteur = 1;
+var compteur = 0;
 var lstPrenoms = "";
 
 do {
-    var prenom = window.prompt("Saisissez le prénom n°" + compteur + "\n ou cliquez sur Annuler pour arrêter la saisie");
+    var prenom = window.prompt("Saisissez le prénom n°" + (compteur + 1) + "\n ou cliquez sur Annuler pour arrêter la saisie");
     console.log(prenom);
 
     if (prenom == null || prenom == "") {
@@ -36,7 +36,7 @@ do {
 } while (prenom != "" && prenom != null)
 
 console.log(compteur - 1);
-alert("Vous avez saisi " + (compteur - 1) + " prénom(s) :\n " + lstPrenoms);
+alert("Vous avez saisi " + compteur + " prénom(s) :\n " + lstPrenoms);
 
 /* Exercice 2 - Entiers inférieurs à N
 Ecrivez un programme qui affiche les nombres inférieurs à N. */

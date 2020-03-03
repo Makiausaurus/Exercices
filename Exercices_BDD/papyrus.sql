@@ -1,66 +1,60 @@
-DROP DATABASE IF EXISTS `papyrus`;
-CREATE DATABASE IF NOT EXISTS `papyrus`;
-USE `papyrus`;
+DROP DATABASE if EXISTS papyrusBDD; /* delete database*/
+CREATE DATABASE papyrusBDD;
+USE papyrusBDD;
 
-
-CREATE TABLE IF NOT EXISTS `produit` (
-    `codArt` char(4) NOT NULL,
-    `libArt` varchar(30) NOT NULL DEFAULT '',
-    `stkAle` int(11) NOT NULL,
-    `stkPhy` int(11) NOT NULL,
-    `qteAnn` int(11) NOT NULL,
-    `uniMes` char(5) NOT NULL DEFAULT '',
-    PRIMARY KEY (`codArt`)
+CREATE TABLE `produit` (
+    codArt CHAR(4) NOT NULL,
+    libArt VARCHAR(30) NOT NULL,
+    stkAle INT NOT NULL,
+    stkPhy INT NOT NULL,
+    qteAnn INT NOT NULL,
+    uniMes CHAR(5) NOT NULL,
+    PRIMARY KEY (codArt)
 );
 
-CREATE TABLE IF NOT EXISTS `fournis` (
-    `numFou` tinyint(4) NOT NULL,
-    `nomFou` varchar(25) NOT NULL,
-    `rueFou` varchar(50) NOT NULL,
-    `posFou` mediumint(5) unsigned NOT NULL,
-    `vilFou` varchar(30) NOT NULL DEFAULT '',
-    `conFou` varchar(15) NOT NULL DEFAULT '',
-    `satisf` tinyint(4) DEFAULT NULL,
-    PRIMARY KEY (`numFou`)
-);
-CREATE TABLE IF NOT EXISTS `entcom` (
-    `numCom` int(11) NOT NULL AUTO_INCREMENT,
-    `obsCom` varchar(50) DEFAULT NULL,
-    `datCom` datetime NOT NULL,
-    `numFou` tinyint(4) DEFAULT NULL,
-    PRIMARY KEY (`numCom`),
-    KEY `entcom_numFou` (`numFou`),
-    CONSTRAINT `entcom_numFou` FOREIGN KEY (`numFou`) REFERENCES `fournis` (`numFou`)
+CREATE TABLE `fournis` (
+    numFou SMALLINT NOT NULL,
+    nomFou VARCHAR(25) NOT NULL,
+    rueFou VARCHAR(50) NOT NULL,
+    posFou CHAR(5) NOT NULL,
+    vilFou VARCHAR(30) NOT NULL,
+    conFou VARCHAR(15) NOT NULL,
+    satisf TINYINT(10),
+    PRIMARY KEY (numFou)
 );
 
-
-CREATE TABLE IF NOT EXISTS `ligcom` (
-    `numLig` tinyint(4) NOT NULL DEFAULT '0',
-    `qteCde` int(11) NOT NULL DEFAULT '0',
-    `priUni` decimal(9,2) NOT NULL DEFAULT '0.00',
-    `qteLiv` int(11) DEFAULT NULL,
-    `derLiv` datetime NOT NULL,
-    `numCom` int(11) NOT NULL,
-    `codArt` char(4) NOT NULL DEFAULT '',
-    PRIMARY KEY (`numLig`),
-    KEY `ligcom_codArt` (`codArt`),
-    KEY `ligcom_numCom` (`numCom`),
-    CONSTRAINT `ligcom_codArt` FOREIGN KEY (`codArt`) REFERENCES `produit` (`codArt`),
-    CONSTRAINT `ligcom_numCom` FOREIGN KEY (`numCom`) REFERENCES `entcom` (`numCom`)
+CREATE TABLE `entcom` (
+    numCom INT AUTO_INCREMENT,
+    obsCom VARCHAR(50),
+    datCom DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    numFou SMALLINT,
+    PRIMARY KEY (numCom),
+    FOREIGN KEY (numFou) REFERENCES fournis(numFou)
 );
 
-CREATE TABLE IF NOT EXISTS `vente` (
-    `delLiv` smallint(6) NOT NULL,
-    `qte1` int(11) NOT NULL,
-    `prix1` decimal(9,2) NOT NULL DEFAULT '0.00',
-    `qte2` int(11) DEFAULT NULL,
-    `prix2` decimal(9,2) DEFAULT NULL,
-    `qte3` int(11) DEFAULT NULL,
-    `prix3` decimal(9,2) DEFAULT NULL,
-    `numFou` tinyint(4) NOT NULL DEFAULT '0',
-    `codArt` char(4) NOT NULL DEFAULT '',
-    KEY `ven_numFou` (`numFou`),
-    KEY `ven_codArt` (`codArt`),
-    CONSTRAINT `ven_codArt` FOREIGN KEY (`codArt`) REFERENCES `produit` (`codArt`),
-    CONSTRAINT `ven_numFou` FOREIGN KEY (`numFou`) REFERENCES `fournis` (`numFou`)
+CREATE TABLE `ligcom` (
+    numLig TINYINT NOT NULL,
+    qteCde INT NOT NULL,
+    priUni DECIMAL(9,2) NOT NULL,
+    qteLiv INT,
+    derLiv DATE NOT NULL,
+    numCom INT NOT NULL,
+    codArt CHAR(4) NOT NULL,
+    PRIMARY KEY (numCom,numLig),
+    FOREIGN KEY (numCom) REFERENCES entcom(numCom),
+    FOREIGN KEY (codArt) REFERENCES produit(codArt)
 );
+
+CREATE TABLE `vente` (
+    delLiv SMALLINT NOT NULL,
+    qte1 INT NOT NULL,
+    prix1 DECIMAL(9,2) NOT NULL,
+    qte2 INT,
+    prix2 DECIMAL(9,2),
+    qte3 INT,
+    prix3 DECIMAL(9,2),
+    numFou SMALLINT NOT NULL,
+    codArt CHAR(4) NOT NULL,
+    FOREIGN KEY (numFou) REFERENCES fournis(numFou),
+    FOREIGN KEY (codArt) REFERENCES produit(codArt)
+);  

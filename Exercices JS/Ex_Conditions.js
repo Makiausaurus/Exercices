@@ -112,7 +112,6 @@ switch (op) {
 
 //Exercice 4
 
-var single;
 var married;
 var child;
 var nbChild = 0;
