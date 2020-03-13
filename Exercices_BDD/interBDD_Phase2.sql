@@ -71,9 +71,9 @@ HAVING COUNT(*) >=3
 
 -- 5. Rechercher le salaire maximum et le salaire minimum parmi tous les
 -- salariés et l'écart entre les deux. 
-SELECT MAX(salaire) AS 'Salaire maximal',
-MIN(salaire) AS 'Salaire minimal',
-(MAX(salaire)-MIN(salaire)) AS 'Écart de salaire'
+SELECT MAX(salaire) AS `Salaire maximal`,
+MIN(salaire) AS `Salaire minimal`,
+(`Salaire maximal`-`Salaire minimal`) AS `Écart de salaire`
 FROM employe
 
 -- 6. Rechercher le nombre de titres différents. 
@@ -104,6 +104,6 @@ HAVING AVG(salaire) >   (SELECT AVG(salaire)
 
 -- 10.Rechercher le nombre de salaires renseignés et le nombre de taux de
 -- commission renseignés. 
-SELECT COUNT(*) AS 'Nombre de salaire renseignés',
-COUNT(tauxcom) AS 'Nombre de taux de com renseignés'
+SELECT COUNT(*) AS `Nombre de salaire renseignés`,
+`Nombre de salaire renseignés` AS `Nombre de taux de com renseignés`
 FROM employe
